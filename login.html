@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员注册-花礼网</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <!---收藏鲜花网  登录-->
+    <div class="header">
+        <ul class="header-left">
+            <li><a href="#"><span class="favorite"></span>收藏鲜花网(hua.com)</a></li>
+            <li><a href="#"><span class="wechart"></span>关注微信</a>
+                <div>
+                    <img src="img/wechat_qrcode.jpg" />
+                    扫码关注<br />
+                    回复"礼物"更多惊喜！
+                </div>
+            </li>
+            <li><a href="#"><span class="app"></span>花礼网</a>
+                <div>
+                    <img src="img/app_qrcode.jpg" />
+                    新人专享100元APP礼包
+                </div>
+            </li>
+        </ul>
+        <ul class="header-right">
+            <li><a>中国鲜花礼品网：中国花网领先品牌</a></li><i>|</i>
+            <li><a href="#"><span class="shopping-cart"></span>购物车
+                <b>(0)</b><span class="triangle"></span></a>
+                <div class="shopping-cart-down">
+                    您的购物车中没有商品，<a href="#">先去选购吧</a>
+                </div>
+            </li><i>|</i>
+            <li><a href="#">客户服务 <span class="triangle"></span></a>
+                <div class="customer-service-down">
+                    <a href="#">在线付款</a>
+                    <a href="#">帮助中心</a>
+                    <a href="#">售后服务</a>
+                    <a href="#">配送范围</a>
+                    <a href="#">留言反馈</a>
+                </div>
+            </li><i>|</i>
+            <li><a href="#">我的花礼</a></li><i>|</i>
+            <li><a href="#">订单查询</a></li><i>|</i>
+            <li><a href="register.html">注册</a></li>
+            <li><a href="login.html">你好，请登录</a></li>
+        </ul>
+    </div>
+    <!---中国鲜花礼品网 搜索框 电话-->
+    <div class="big-border">
+        <div class="search">
+            <div class="lf logo">
+                <ul class="lf">
+                    <li class="lf"><a href="#"><img src="img/logo.png"></a><i></i></li>
+                    <li class="lf">欢迎注册</li>
+                </ul>
+            </div>
+            <div class="lf search-flower">
+                <div><input type="text" placeholder="商品关键词">
+                    <span><a href="#">搜索</a></span>
+                </div>
+            </div>
+            <div class="rf phone">
+                <i class="phone-icon"></i>
+                <span>400-889-8188</span>
+                <span>|</span>
+                <i class="waiter-icon"></i>
+                <span><a href="#">在线客服</a></span>
+            </div>
+        </div>
+    </div>
+
+	<!-- 注册登录部分 -->
+	<div class="login-wrapper">
+		<div>
+			<div class="login-register"><a href="#">登录</a><a href="#">注册</a></div>
+			<form class="content" style>
+				<input type="Email" placeholder="请填写您的Email地址" name="emial" id="email"/>
+				<input type="password" placeholder="请输入6-12位由数字、字母组成的密码" name="pwd" id="pwd"/>
+				<input type="password" placeholder="再次输入密码" id="pwd2"/>
+				<input type="text" placeholder="验证码" id="test"/>
+				<canvas id="c3"></canvas><a href="javascript:;" id="changecode">看不清，换一张</a>
+				<p id="tips"></p>
+				<button>立即注册</button>
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<!----友情链接---->
+    <div class="friend-link">
+        <a href="#">首页</a><b>|</b>
+        <a href="#">关于我们</a><b>|</b>
+        <a href="#">媒体报道</a><b>|</b>
+        <a href="#">联系方式</a><b>|</b>
+        <a href="#">企业团购</a><b>|</b>
+        <a href="#">友情链接</a><b>|</b>
+        <a href="#">在线补款</a><b>|</b>
+        <a href="#">为什么选择中国鲜花礼品网</a>
+    </div>
+	<div class="footer">
+        <div class="footer-top">
+            <span>
+                <a href="#"><img src="img/cxwz.png"></a>
+                <a href="#"><img src="img/cxwz.gif"></a>
+                <a href="#"><img src="img/smyz.gif"></a>
+                <a><img src="img/slogan.png"></a>
+                <a href="#"><img src="img/zfb.gif"></a>
+                <a href="#"><img src="img/100.jpg"></a>
+                <a href="#"><img src="img/bico1.jpg"></a>
+                <a href="#"><img src="img/bico4.jpg"></a>
+                <a href="#"><img src="img/bico3.jpg"></a>
+            </span>
+            <p>
+                <a href="#">中国花卉协会会员</a>
+                <a href="#">中国电子商务协会会员</a>
+                &nbsp;ICP经营许可证：&nbsp;<a href="#">粤B2-20050744</a>
+                &nbsp;|&nbsp;<a href="#">粤ICP备09171662号</a>&nbsp;
+                <img src="img/beian.png">粤公网安备44030502000373号&nbsp;
+                Copyright&nbsp;&copy;&nbsp;2005-2017
+            </p>
+            <p>
+                <a href="#">www.hua.com</a>
+                深圳市百易信息技术有限公司
+            </p>
+        </div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+
+	//验证密码
+	var pwd_reg=/^[a-zA-Z0-9]{6,12}$/;
+	$("#pwd").blur(function(){
+		console.log("outer"+this);
+		if(pwd_reg.test(this.value)){
+			$("pwd2").blur(function(){
+				console.log("inner"+this);
+				if(this.value==$("#pwd").val()){
+				$("#tips").html("success");
+			}else{$("#tips").html("两次密码输入不一致！");}
+			});	
+		}else{$("#tips").html("密码格式不正确！");}
+	});
+	
+	
+	//1:创建二个变量保存验证码的宽度和高度
+       var w = 100;
+       var h = 30;
+       //2:将变量值赋值canvas
+       c3.width = w;
+       c3.height = h;
+       //3:获取画笔
+       var ctx = c3.getContext("2d");
+	   function f(){
+       //4:创建二个函数，返回指定范围内的随机数，和随机颜色
+		    function rn(min,max){
+			   var n = Math.random()*(max-min)+min;
+			   return Math.floor(n);
+		    }
+		    function rc(min,max){
+			   var r = rn(min,max);
+			   var g = rn(min,max);
+			   var b = rn(min,max);
+			   return  `rgb(${r},${g},${b})`;
+		    }
+
+		   //5:填充背景
+		    ctx.fillStyle = rc(180,230);
+		    ctx.fillRect(0,0,w,h);
+		   //6:创建随机文字[字母和数字]4
+		    var pool = "ABCDEFabcde0123456789";
+		    var str = "";
+			for(var i=0;i<4;i++){
+			   var index = Math.floor(Math.random()*pool.length);
+			   str += pool[index];
+			}
+		   console.log("f()里面"+str);
+		   ctx.font = "30px SimHei";
+		   ctx.fillStyle = rc(80,180);
+		   ctx.textBaseline = "top";
+		   ctx.fillText(str,0,0);
+		   //7:绘制6条干扰线
+		   for(var i=0;i<6;i++){
+			   ctx.strokeStyle = rc(0,255);
+			   ctx.beginPath();
+			   ctx.moveTo(rn(0,w),rn(0,h));
+			   ctx.lineTo(rn(0,w),rn(0,h));
+			   ctx.stroke();
+		    }
+		   //8:绘制50个干扰点 9:46--9:49
+		   for(var i=0;i<50;i++){
+			   ctx.fillStyle = rc(0,255);
+			   ctx.beginPath();
+			   ctx.arc(rn(0,w),rn(0,h),1,0,2*Math.PI);
+			   ctx.fill();
+		   }
+		   return str;
+		}
+
+		var s;
+		s=f();
+	   /*点击验证码更换*/
+		 document.getElementById("changecode").onclick=function(e){
+			  e.preventDefault(); //阻止鼠标点击发生默认的行为
+			  f();
+			  s = f();
+		 };
+		 	
+	    $("#test").blur(function(){
+			console.log(s + '  '+$(this).val())
+			if($(this).val()!=s){$("#tips").html("验证码不正确！");}
+			else{$("#tips").html("");}
+	    });
+	</script>
+</body>
+</html>
